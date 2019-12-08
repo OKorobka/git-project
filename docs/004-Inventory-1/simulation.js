@@ -70,16 +70,6 @@ sim.experiment.experimentNo = 1;  // sequence number relative to simulation scen
 sim.experiment.title = "EValuate the continuous replenishment scenario";
 sim.experiment.replications = 50;
 
-sim.experiment.id = 2;
-sim.experiment.experimentNo = 2;  // sequence number relative to simulation scenario
-sim.experiment.title = "EValuate the periodic replenishment scenario";
-sim.experiment.replications = 50;
-
-
-sim.model.v.replenishmentPolicy = {
-	"1": {objectType: "SingleProductShop", name:"continuous replenishment scenario"},
-    "2": {objectType: "SingleProductShop", name:"periodic replenishment policy"}
-}
 
 
 
