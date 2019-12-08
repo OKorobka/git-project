@@ -1,0 +1,951 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  font-family:sans-serif;
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Custom styles
+   ========================================================================== */
+
+body {
+  padding: 8px;
+}
+button {
+  border-radius: 3px;  
+  background: ghostwhite;
+}
+button[disabled] {
+    color: lightgrey;
+    background: whitesmoke;
+}
+button[disabled]:hover {
+  cursor: default;
+}
+noscript > p { font-size: 1.2em; color: red;}
+
+.oBJECTvIEW h2 {
+  font-size: 110%;
+  margin-top: 0.2em;
+}
+table { 
+  border-collapse:collapse;
+  margin: 1em 0;
+  empty-cells: show;
+}  
+table, td, th { 
+  border: thin solid black;
+  padding: 5px;
+}  
+thead, th {
+  background: aliceblue;
+}
+
+/****************************************
+ Fixed-height tables with scrollable body
+ assuming scrollbar width is 16px
+
+ Issues: (1) does not scroll horizontally
+ (2) renders thead underneath tbody
+
+ ****************************************/
+/*
+table.RecTbl {
+  display: table;
+  width: 100%;
+}
+table.RecTbl thead {
+  display: table;
+  table-layout: fixed;
+  width: calc(100% - 16px);
+}
+table.RecTbl tbody {
+  display: block;
+  width: calc(100% - 16px);
+  height: 10em;
+  overflow: auto;
+  overflow-y: scroll;
+}
+table.RecTbl tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  text-align: left;
+}
+*/
+
+/* Center the class name of a record table widget */
+table.RecTbl > thead > tr:first-child  {
+  text-align: center;
+}
+
+menu {
+  width: 14em;
+  text-align: center;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 5px;
+}
+menu li {
+  list-style: none;
+  height: 1.5em;
+  margin: 2px auto;
+}
+menu li button {
+  width: 14em;
+}
+/*** Modal Window and Draggable Modal Window ***/
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color:rgba(0,0,0, 0.5);  /* 50% opacity */
+  animation: overlay-with-modal .3s forwards ease;
+}
+@keyframes overlay-with-modal {
+  from {transform:scale(0.5); background-color:rgba(0,0,0, 0);}
+  to {transform:scale(1); background-color:rgba(0,0,0, 0.5);}
+}
+.modal {
+  width: 40em;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);  /* for centering */
+  background-color: #eee;
+}
+.modal > h1 {
+  margin: 0;
+  padding: 0.5em;
+  color: #eee;
+  background-color: blue;
+  font-size: 120%;
+  height: 2em;
+}
+.modal > h1 > span.title {
+  display: inline-block;
+  padding-top: 0.4em;
+}
+.modal > h1 > span.closeButton {
+  color: #eee;
+  float: right;
+  font-size: 180%;
+  font-weight: bold;
+}
+.modal .modal-body {
+  padding: 0.5em;
+}
+.modal label {
+  line-height: 1.5;
+}
+.modal.action-required > h1{
+  background-color: green;
+}
+.modal.error > h1{
+  background-color: deeppink;
+}
+.modal .closeButton:hover,
+.modal .closeButton:focus {
+  cursor: pointer;
+}
+[draggable=true] {
+  outline: 1px solid black;
+  cursor: move;
+  overflow: auto;
+  resize: both;
+}
+/*********************************************/
+form :invalid {
+  box-shadow: none;  /* neutralizing FF */
+  outline: dotted red;      
+}
+form > h1 {  /* form title */
+  font-size: 120%;
+}
+form > div:first-child  {
+  margin-top: 0.5em;
+}
+form > div:not(:last-child)  {
+  margin-bottom: 0.5em;
+}
+form > div > label {
+  position: relative;
+}
+form > div.I-O-field > label {
+  width: 40em;
+  display: block;     /* by default, one labeled control per line*/
+}
+form div.field-group > label {
+  display: inline-block;
+  width: 20em;
+  margin-right: 1em;
+}
+form div.field-group > label > output {
+  position: absolute;
+  left: 12em;
+}
+form div.field-group > table.RecTbl {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+}
+form output {
+  min-width: 2em;
+  background-color: gainsboro;
+}
+form div.field-group > label > input,
+form div.field-group > label > select,
+form div.field-group > label > output {
+  margin-left: 0.7em;
+  margin-right: 0.1em;
+}
+form div.I-O-field > label > input[type="text"],
+form div.I-O-field > label > input[type="number"],
+form div.yes-no-field > label > input[type="checkbox"],
+form div.select > label > select,
+form div.I-O-field > label > output {
+  position: absolute;
+  left: 12em;
+}
+form div.I-O-field > label > input[type="text"],
+form div.I-O-field > label > input[type="number"] {
+  width: 7em;
+}
+/*
+form div.yes-no-field > label > input[type="checkbox"] {
+  position: absolute;
+  left: 2em;
+}
+*/
+form div.action-group {
+  margin-top: 0.5em;
+}
+form div > button {
+  margin-right: 0.5em;  
+}
+
+form fieldset {
+  margin-bottom: 1em;  
+}
+form fieldset > label {
+  margin-right: 1em;
+}
+form fieldset > label > input[type="radio"],
+    form > fieldset > label > input[type="checkbox"] {
+  margin-right: 0.5em;  
+}
+
+/* Record List Widget */
+td[contenteditable] {
+  background-color: hsl( 120, 100%, 95%); /* 120 = green */
+}
+/* PrismJS 1.15.0
+https://prismjs.com/download.html#themes=prism&languages=clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+
+/* In addition to vIEW.css */
+
+#sim4eduinfo {
+    display: inline-block;
+    font-size: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#model-menu {
+    display: inline-block;
+    font-size: 90%;
+    margin-top: 0;
+    margin-bottom: 0.67em;
+}
+#model-menu button {
+    display: inline-block;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 0.5em;
+}
+button:hover,
+button:focus {
+    cursor: pointer;
+}
+#model-menu button#spaceSizeDefBtn {
+    margin-left: 1em;
+    background-color: azure;
+}
+#model-menu form {
+    /* position: relative; */
+    vertical-align: top;
+    margin-right: 0.5em;
+    border: 1px solid;
+    padding: 2px;
+}
+#model-menu form div.field-group > label {
+    width: auto;
+}
+#showCodeForm p {
+    margin: 0;
+}
+#showCodeForm div {
+    margin-top: 0.3em;
+}
+form span.closeButton {
+    float: right;
+    font-size: 120%;
+    margin-top: -0.2em;
+}
+form span.closeButton:hover,
+form span.closeButton:focus {
+    color: red;
+    cursor: pointer;
+}
+
+#frontMatter > h1 {
+    margin: 0.2em 0;
+}
+#frontMatter h1 > a {
+    display: inline-block;
+    margin-left: 2em;
+    font-size: 45%;
+    width: 5em;
+}
+#scenario {
+    border-left: 0.5em solid gainsboro;
+}
+#scenario > h2 {
+    margin-top: 0;
+    background-color: gainsboro;
+    color: whitesmoke;
+}
+#scenario > div {
+    margin-left: 6px;
+}
+body > footer {
+    margin-top: 3em;
+    font-size: smaller;
+}
+#errors {
+    padding-left: 5px;
+    outline: red solid;
+}
+.error {
+    color: #C0392B;
+}
+
+div[id="progress-container"] {
+    margin: 3em 1em;
+    text-align: center;
+}
+div[id="progress-container"] > h1 {
+    font-size: 100%;
+}
+progress {
+    width: 25em;
+    height: 1.7em;
+}
+
+/* Vertical margin for UI blocks */
+.uiBlock {
+    margin: 1em 0;
+}
+
+/* overrides vIEW CSS rules */
+form button[name="run step"] {
+    margin-right: 0;
+}
+form .stepIncrement {
+    cursor: pointer;
+    margin-right: 0.5em;
+    padding: 1px;
+}
+form[id="scenario"] div.field-group > label,
+form[id="sim"] div.field-group > label {
+    width: auto;
+}
+form[id="scenario"] div.field-group > label:not(:first-child),
+form[id="sim"] div.field-group > label:not(:first-child)
+{
+    margin-left: 1em;
+}
+form[id="scenario"] div.field-group > label > output,
+form[id="sim"] div.field-group > label > output
+{
+    position: static; left: 0;
+}
+
+/* Styles for simulation experiment statistics */
+table.expStatistics tbody td {
+    text-align: right;
+}
+
+/* Styles for DOM-Grid */
+table#visCanvas {
+  table-layout: fixed;
+}
+/* table[id="space-view"] corresponds to table#space-view, but helps to avoid cascade/specificity issues */
+table[id="visCanvas"] td {
+  padding: 1px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table[id="space-view"] td div.object-view {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  min-width: 3px;
+  min-height: 3px;
+  width: 100%;
+  height: 100%;
+  font-size: 90%;
+}
+
+/*canvas {
+  margin: 0.5em 0;
+  width: 100% !important;
+}*/
+.expandablePanel {
+  border: 3px solid grey;
+  padding: 5px;
+  margin: 1em 0;
+}
+.expandablePanel > h2 {
+  font-size: 1.2em;
+  color: grey;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.expandablePanel > h2 > button {
+  font-size: smaller;
+  margin-right: 1em;
+}
+.expandablePanel > div.xpanel-content > div.xpanel-main {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+form[id="expost-statistics"] {
+    outline: solid grey;
+    padding: 5px;
+    margin: 1em 0;
+}
+form[id="expost-statistics"] h2 {
+    font-size: 110%;
+    margin-bottom: 0.4em;
+}
+form[id="expost-statistics"] h3 {
+    font-size: 100%;
+    margin-top: 0.3em;
+    margin-bottom: 0.2em;
+}
+div[id="time-series-chart"] {
+    width: 100%;
+    height: 450px;
+}
+
+#InitialStateObjectsUI table.PopTable {
+    max-height: 7em;
+    overflow: auto;
+}
+
+/* ==========================================================================
+   Print styles for printing the SVG chart
+   ========================================================================== */
+
+@media print {
+	@page {size: landscape;}
+	
+    body {visibility: hidden;}
+	#time-series-chart {
+		visibility:visible;
+		position:absolute; top:0px; left:0px;
+	}
+}
