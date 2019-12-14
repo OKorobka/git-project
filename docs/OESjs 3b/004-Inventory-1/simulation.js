@@ -17,11 +17,11 @@ sim.model.objectTypes = ["SingleProductShop"];
 sim.model.eventTypes = ["DailyDemand", "Delivery"];
 
 /* Global variables*/
-//sim.model.v.replenishmentType = {
-//	range: "Integer",
-//initialValue: [1, 2],
- // label: "Replenishment Policy"
- // };
+sim.model.v.replenishmentPolicy = {
+	range: "Integer",
+   initialValue: [1, 2],
+    label: "Replenishment Policy"
+	  };
 
 /*******************************************************
  Define an experiment
@@ -30,10 +30,8 @@ sim.experiment.id = 1;
 sim.experiment.experimentNo = 1;  // sequence number relative to simulation scenario
 sim.experiment.title = "EValuate the continuous replenishment scenario";
 sim.experiment.replications = 50;
-//sim.experiment.title = "Compare Two Replenishment  Policies";
-///sim.experiment.parameterDefs = [
- // {name:"replenishmentType", values:[1, 2]}
-//]; 
+
+ 
 
 
 /*******************************************************

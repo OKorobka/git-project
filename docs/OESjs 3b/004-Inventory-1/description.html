@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+  <meta charset="UTF-8">
+ <title>Inventory-1 Object Event Simulation Description</title>
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <link rel="stylesheet" href="../framework/description.css" />
+    <script src="metadata.js"></script>
+    <script src="../framework/description.js"></script>
+</head>
+<body onload="oes.ui.setupDescription()">
+ <div id="frontMatter">
+  <h1><span>Inventory Management with a Continuous Replenishment Policy</span>
+   <a href="index.html">Back to simulation</a></h1>
+  <p><strong>Classification tags</strong>: business operations management, DES, next-event time progression</p>
+  <figure class="right"><img src="media/img/theme-image.svg" alt="" width="240" /></figure>
+  <section id="shortDescription"></section>
+ </div>
+
+ <section class="mbd collapsed"><h1><span>►</span>Conceptual Model <sup class="expl-req">?</sup></h1>
+   <div id="expl-CM" class="expl"></div>
+
+   <section><h1>Conceptual Information Model <sup class="expl-req">?</sup></h1>
+     <div id="expl-CIM" class="expl"></div>
+
+     <p>The potentially relevant object types are:</p>
+     <ol>
+       <li>shops,</li>
+       <li>products,</li>
+       <li>inventories,</li>
+       <li>customers,</li>
+       <li>vendors,</li>
+       <li>...</li>
+     </ol>
+     <!--
+          <figure class="right-float">
+            <img src="CIM-ObjT.svg" width="450"/>
+            <figcaption>A conceptual model describing object types.</figcaption>
+          </figure>
+     -->
+     <p>Potentially relevant types of events are:</p>
+     <ol>
+       <li>customer orders,</li>
+       <li>product handovers,</li>
+       <li>customer payments,</li>
+       <li>replenishment orders,</li>
+       <li>deliveries,</li>
+       <li>payments for deliveries,</li>
+       <li>...</li>
+     </ol>
+     <p>These object and event types, with their participation associations, can be visually described in
+       a UML class diagram, as shown below.</p>
+     <figure>
+       <img src="media/img/CIM.svg" width="800"/>
+       <figcaption>A conceptual information model describing object types and event types.</figcaption>
+     </figure>
+     <p>If a demand is greater than the current stock level, the difference counts as a lost sale. 
+	    Whenever the stock level falls below a certain threshold (called <i>reorder point)</i>), the shop 
+      places a replenishment order with a quantity computed as the difference between an upper threshold 
+       (called <i>target inventory</i>) and the current stock level.</p>
+    </section>
+   <section><h1>Conceptual Process Model <sup class="expl-req">?</sup></h1>
+     <div id="expl-CPM" class="expl"></div>
+
+     <table>
+       <caption>Conceptual event rules.</caption>
+       <thead>
+       <tr>
+         <th>ON (event type)</th><th>DO (event routine)</th><th>Conceptual Event Rule Diagram</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+         <td>customer order</td>
+         <td>if there is sufficient inventory, then product handover, else customer departure</td>
+         <td><img src="media/img/CustomerOrder_CRM.svg" width="300"/></td>
+       </tr>
+       <tr>
+         <td>product handover</td>
+         <td>customer payment</td>
+         <td><img src="media/img/ProductHandover_CRM.svg" width="200"/></td>
+       </tr>
+       <tr>
+         <td>customer payment</td>
+         <td>customer departure</td>
+         <td><img src="media/img/CustomerPayment_CRM.svg" width="200"/></td>
+       </tr>
+       </tbody>
+     </table>
+   </section>
+ </section>
+ <section class="mbd collapsed"><h1><span>►</span>Simulation Design Model <sup class="expl-req">?</sup></h1>
+   <div id="expl-DM" class="expl"></div>
+
+   <section><h1>Information Design Model <sup class="expl-req">?</sup></h1>
+     <div id="expl-IDM" class="expl"></div>
+
+     <p>The random variation of the lead time between a replenishment order and the corresponding delivery
+       is modeled by a random variable with a uniform probability distribution between 1 and 3 days.
+       The inventory is modelled as an object with three attributes: <code>productQuantityInStock</code>,
+       <code>reorderPoint</code> and <code>targetInventory</code>. For simplicity, the model does not create
+       replenishment order events, but instead it only schedules corresponding delivery events.</p>
+      <p>Consequently, we model just one object type: <b><code>SingleProductShop</code></b>, with three attributes
+         <code>quantityInStock</code> (NonNegativeInteger),  <code>reorderPoint</code> (NonNegativeInteger), 
+		 and <code>targetInventory</code> (PositiveInteger). In addition, we model two event types:</p>
+     <ul>
+       <li><b><code>DailyDemand</code></b> as an exogeneous event type with one attribute: <code>quantity</code> (PositiveInteger),
+         and with the random variable function <code>sampleQuantity</code> and, as an exogeneous event type, 
+		 with a <code>recurrence</code> function.</li>
+       <li><b><code>Delivery</code></b> as a caused event type with one attribute: <code>quantity</code> (PositiveInteger),
+         and with the random variable function <code>sampleLeadTime</code>.</li>
+     </ul>
+     <figure>
+       <img src="media/img/IDM.svg" width="600"/>
+       <figcaption>An information design model describing object types and event types.</figcaption>
+     </figure>
+	 <p>When the design model is implemented with an object-oriented programming language or framework, 
+	  the participation associations between <code>DailyDemand</code> and <code>SingleProductShop</code>, as well as 
+	  between <code>Delivery</code> and <code>SingleProductShop</code>,	are represented with the corresponding
+    reference properties <code>shop</code> and <code>receiver</code>. This is also the case when using the Object Event
+	  Simulation (OES) framework <i>OESjs</i> available from <a href="https://sim4edu.com">Sim4edu</a>, 
+	  where all object types are derived from the pre-defined OES category <code>oBJECT</code> 
+	  and all event types are derived from the pre-defined OES category <code>eVENT</code>, 
+	  as shown in the following diagram:</p>
+     <figure>
+       <img src="media/img/IDM-OO.svg" width="600"/>
+       <figcaption>An OES class model showing the pre-defined types <code>oBJECT</code> and <code>eVENT</code>.</figcaption>
+     </figure>
+   </section>
+   <section><h1>Process Design Model <sup class="expl-req">?</sup></h1>
+     <div id="expl-PDM" class="expl"></div>
+
+     <table>
+       <caption>Event rule design table.</caption>
+       <thead>
+       <tr>
+         <td>ON (event type)</td><td>DO (event routine)</td>
+       </tr>
+       </thead>
+       <tbody style="font-size: smaller">
+       <tr>
+         <td>DailyDemand( demQuant) @ t</td>
+         <td>
+<pre>IF demQuant &lt;= shop.quantityInStock
+THEN
+  IF shop.quantityInStock − demQuant &lt; shop.reorderPoint AND
+       shop.quantityInStock > shop.reorderPoint
+  THEN
+    SET ordQuant TO shop.targetInventory −
+          shop.quantityInStock - demQuant
+    SCHEDULE Delivery( ordQuant) @ t + sampleLeadTime()
+  DECREMENT shop.quantityInStock BY demQuant
+ELSE (if demQuant > shop.quantityInStock)
+  INCREMENT shop.lostSales BY demQuant − shop.quantityInStock
+  SET shop.quantityInStock TO 0</pre>
+         </td>
+       </tr>
+       <tr>
+         <td>Delivery( delQuant) @ t</td>
+         <td><pre>INCREMENT shop.quantityInStock BY delQuant</pre></td>
+       </tr>
+       </tbody>
+     </table>
+     <figure>
+       <img src="media/img/DailyDemand_RDM.svg" width="600"/>
+       <figcaption>A rule design model for the event type <code>DailyDemand</code>.</figcaption>
+     </figure>
+     <figure>
+       <img src="media/img/Delivery_RDM.svg" width="300"/>
+       <figcaption>A rule design model for the event type <code>Delivery</code>.</figcaption>
+     </figure>
+   </section>
+ </section>
+ <p><a href="index.html">Back to simulation</a></p>
+</body>
+</html>
+
